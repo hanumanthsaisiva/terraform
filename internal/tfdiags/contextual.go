@@ -29,9 +29,10 @@ type contextualFromConfigBody interface {
 }
 
 // InConfigBody returns a copy of the receiver with any config-contextual
-// diagnostics elaborated in the context of the given body. An optional address
-// argument may be added to indicate which instance of the configuration the
-// error related to.
+// diagnostics elaborated in the context of the given body.
+//
+// An optional address argument may be added to indicate which instance of the
+// configuration the error related to.
 func (diags Diagnostics) InConfigBody(body hcl.Body, addr string) Diagnostics {
 	if len(diags) == 0 {
 		return nil
